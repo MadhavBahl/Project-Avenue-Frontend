@@ -1,0 +1,26 @@
+{
+  "name": "avenue",
+  "version": "1.0.0",
+  "description": "Web App for Angelhacks project",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server/server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/MadhavBahlMD/Project-Avenue-Frontend.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/MadhavBahlMD/Project-Avenue-Frontend/issues"
+  },
+  "homepage": "https://github.com/MadhavBahlMD/Project-Avenue-Frontend#readme",
+  "dependencies": {
+    "body-parser": "^1.18.2",
+    "express": "^4.16.3",
+    "hbs": "^4.0.1",
+    "unirest": "^0.5.1"
+  }
+}
