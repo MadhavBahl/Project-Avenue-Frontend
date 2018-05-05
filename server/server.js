@@ -15,6 +15,10 @@ app.get('/', (req, res) => {
     res.render('index.hbs');
 });
 
+app.get('/doctor', (req, res) => {
+    res.render('doctor.hbs');
+});
+
 app.listen (port, () => {
     console.log(`App listening on port ${port}`);
 });
