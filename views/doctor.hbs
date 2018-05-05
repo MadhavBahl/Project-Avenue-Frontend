@@ -23,28 +23,51 @@
                 <div class="outerBox2">
                     <div class="mainBox">
                     <div class="col s6 center pointer ">
-                        <h5 class="underLine active">SIGNUP</h5>
+                        <h5 class="underLine active signupBtn">SIGNUP</h5>
 
 
                     </div>
                     <div class="col s6 center pointer ">
-                        <h5 class="underLine">LOGIN</h5>
+                        <h5 class="underLine loginBtn">LOGIN</h5>
                     </div>
 
-                    <div class="col s12" style="padding: 0;">
+                    <div id="signupForm" class="col s12" style="padding: 0;">
                         <form action="/signup" method="post">
                             <div class="input-field center">
-                                <input placeholder="Placeholder" id="first_name" type="text" class="validate center">
+                                <input placeholder="Full Name"  name="name" type="text" class="validate center">
                                 {{!-- <label for="first_name">First Name</label> --}}
                             </div>
 
                             <div class="input-field center">
-                                <input placeholder="Placeholder" id="first_name" type="text" class="validate center">
+                                <input placeholder="Email"  name="email" type="email" class="validate center">
                                 {{!-- <label for="first_name">First Name</label> --}}
                             </div>
 
                             <div class="input-field center">
-                                <input placeholder="Placeholder" id="first_name" type="text" class="validate center">
+                                <input placeholder="Phone Number"  name="phone" type="text" class="validate center">
+                                {{!-- <label for="first_name">First Name</label> --}}
+                            </div>
+
+                            <div class="input-field center">
+                                <input placeholder="Password"  name="password" type="password" class="validate center">
+                                {{!-- <label for="first_name">First Name</label> --}}
+                            </div>
+
+                            <div class="input-field center col s12" style="padding: 0;">
+                                <button style="padding: 0; background-color: #e15556;" class="btn waves-effect waves-light  col s12 activeBkg" type="submit" name="action"> <span class="interText">SIGNUP</span></button>
+                            </div>
+                        </form>
+                    </div>
+
+                    <div id="loginForm" class="col s12" style="padding: 0;">
+                        <form action="/login" method="post">
+                            <div class="input-field center">
+                                <input placeholder="Email"  name="email" type="email" class="validate center">
+                                {{!-- <label for="first_name">First Name</label> --}}
+                            </div>
+
+                            <div class="input-field center">
+                                <input placeholder="Password"  name="password" type="password" class="validate center">
                                 {{!-- <label for="first_name">First Name</label> --}}
                             </div>
 
@@ -63,6 +86,10 @@
     </div>    
 
     <!-- Compiled and minified JavaScript -->
+    <script
+        src="https://code.jquery.com/jquery-3.3.1.min.js"
+        integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+        crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-beta/js/materialize.min.js"></script>
     <script src="js/signup.js"></script>
 </body>

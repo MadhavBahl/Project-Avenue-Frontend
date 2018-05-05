@@ -9,3 +9,10 @@ Web App for Angelhacks project
 2. `npm install`
 
 3. `npm start`
+
+
+## USP
+
+1. Sell as a product
+
+2. Sell as a service
