@@ -8,7 +8,7 @@
     <title>Avenue | Sign Up</title>
     <!-- Compiled and minified CSS -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-beta/css/materialize.min.css">
-    <link rel="stylesheet" href="css/signup.css">
+    <link rel="stylesheet" href="css/reg.css">
 </head>
 <body>
     <div class="container">
@@ -31,7 +31,7 @@
                         <h5 class="underLine loginBtn">LOGIN</h5>
                     </div>
 
-                    <div id="signupForm" class="col s12" style="padding: 0;">
+                    <div id="signupForm" class="col s12" style="padding: 0;" style="display: none !important;">
                         <form action="/signup" method="post">
                             <div class="input-field center">
                                 <input placeholder="Full Name"  name="name" type="text" class="validate center">
@@ -54,12 +54,13 @@
                             </div>
 
                             <div class="input-field center col s12" style="padding: 0;">
-                                <button style="padding: 0; background-color: #e15556;" class="btn waves-effect waves-light  col s12 activeBkg" type="submit" name="action"> <span class="interText">SIGNUP</span></button>
+                                <button style="padding: 0; background-color: #e15556;" class="btn waves-effect waves-light  col s12 activeBkg" type="submit"> <span class="interText">SIGNUP</span></button>
                             </div>
                         </form>
                     </div>
 
-                    <div id="loginForm" class="col s12" style="padding: 0;">
+                    <div id="loginForm" class="col s12" style="padding: 0;" style="display: block !important;">
+                        <h6 class="center active">Congratulations! You have successfully registered</h6>
                         <form action="/login" method="post">
                             <div class="input-field center">
                                 <input placeholder="Email"  name="email" type="email" class="validate center">
@@ -72,7 +73,7 @@
                             </div>
 
                             <div class="input-field center col s12" style="padding: 0;">
-                                <button style="padding: 0; background-color: #e15556;" class="btn waves-effect waves-light  col s12 activeBkg" type="submit" name="action"> <span class="interText">SIGNUP</span></button>
+                                <button style="padding: 0; background-color: #e15556;" class="btn waves-effect waves-light  col s12 activeBkg" type="submit"> <span class="interText">SIGNIN</span></button>
                             </div>
                         </form>
                     </div>
