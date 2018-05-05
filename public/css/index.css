@@ -1,0 +1,104 @@
+html, body {
+    background-color: white;
+    width: 100%;
+    overflow-x: hidden;
+}
+
+.header {
+    /* background-color: #0dcdc0; */
+    background-color: #fff;
+    width: 100%;
+    /* min-height: 30vh; */
+    color: white;
+}
+
+#mainCard1 {
+    /* margin-top: -80px; */
+}
+
+.mainCardContainer {
+    width: 85%;
+}
+
+.innerCard {
+    color: #686868;
+}
+
+.step {
+    margin: 0;
+
+}
+
+.between {
+    font-size: 18px;
+}
+
+.ninety {
+    width: 60%;
+    padding-right: 2%;
+}
+
+.cardPad {
+    padding: 10px !important;
+}
+
+.padLess {
+    /* padding-top: 4px;
+    padding-bottom: 4px; */
+    margin-top: 4px;
+    /* height: 32px; */
+    padding-left: 18px;
+    padding-right: 18px;
+    /* padding-bottom: 2px;
+    padding-top: -2px; */
+}
+
+.fixFont {
+    font-size: 28px;
+}
+
+.sendForm {
+    margin-bottom: 0;
+}
+
+.done {
+    display: none;
+}
+
+.footer {
+    /* background-color: #0dcdc0; */
+
+    width: 100%;
+    height: 12vh;
+    color: white;
+    margin-top: -10vh;
+}
+
+.innerCard {
+    min-height: 500px;
+    border-radius: 5px !important;
+    -moz-border-radius: 10px 10px 10px 10px;
+    -webkit-border-radius: 10px 10px 10px 10px;
+    border: 2px solid #d5d5d5;
+}
+
+.redBtn {
+    border-radius: 20px 20px 20px 20px;
+    -moz-border-radius: 20px 20px 20px 20px;
+    -webkit-border-radius: 20px 20px 20px 20px;
+    border: 2px solid #c92323;
+    color: #c92323;
+}
+
+.pointer:hover {
+    cursor: pointer;
+}
+
+.incSize {
+    font-size: 19px;
+}
+
+.active {
+    background-color: #c92323;
+    color: #fff;
+}

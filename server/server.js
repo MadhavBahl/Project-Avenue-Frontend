@@ -11,6 +11,18 @@ app.set('views', __dirname + '/../views');
 app.use(express.static(__dirname + '/../public'));
 app.set('view engine', 'hbs');
 
+/* ===================================================================== */
+/* ===== These routes are for tessting and can be removed later on ===== */
+/* ===================================================================== */
+
+app.get('/docPat', (req, res) => {
+    res.render('docPat.hbs', {
+        random: "Random Data"
+    });
+});
+
+/* ===================================================================== */
+
 app.get('/', (req, res) => {
     res.render('index.hbs');
 });
@@ -25,7 +37,11 @@ app.post('/signup', (req,res) => {
         .headers({'Accept': 'application/json', 'Content-Type': 'application/json'})
         .send(resp)
         .end(function (response) {
-            res.render('registered.hbs');
+            console.log(response.body);
+            if (response.body.success === true)
+                res.render('registered.hbs', { code: 'Congratulations! You have successfully registered'});
+            else 
+                res.render('registered.hbs', { code: 'Sorry! There was some problem, please try again!'});
         });
 });
 

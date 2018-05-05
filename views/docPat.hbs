@@ -1,0 +1,182 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta name="description" content="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum" />
+    <title>Avenue | Welcome</title>
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.12/css/all.css" integrity="sha384-G0fIWCsCzJIMAVNQPfjH08cyYaUtMwjJwqiRKxxE/rx96Uroj1BtIQ6MLJuheaO9" crossorigin="anonymous">
+    <link rel="shortcut icon" href="/img/adg-logo.png">
+    <!--Import materialize.css-->
+    <link type="text/css" rel="stylesheet" href="/css/materialize.min.css"  media="screen,projection"/>
+    <link rel="stylesheet" href="/css/index.css">
+</head>
+<body>
+
+    <div class="header">
+        <div class="container">
+            
+
+            
+        </div>
+
+        
+    </div>
+
+    <div class="container">
+        
+    </div>
+
+    <div class="mainCard" id="mainCard1">
+        <div class="container mainCardContainer">
+            <div class="row" style="padding-top: 28px;">
+                <div class="col s12 m3">
+                    <img src="/assets/Icon.png" class="responsive-img" alt="">
+                </div>
+
+                <div class="col s12 m1 offset-m8 hide-on-small-only">
+                    <img src="/assets/home.png" class="responsive-img" alt="">
+                </div>
+            </div>
+            <br>
+
+            <div class="row">
+                {{!-- <div class="col s10 m3 redBtn pointer" style="margin: 32px; margin-top: 10px; margin-bottom: 10px;"> --}}
+                <div class="col s12 m4 ">
+                    <div class="col s12 redBtn pointer">
+                        <h6 class="incSize"> <img src="assets/plus.png" alt="" style="width: 21px; display:inline; vertical-align: middle; margin-bottom: 2px;" > <span style="vertical-align: middle; padding-top: 2px;">New Case</span> </h6>
+                    </div>
+                    
+                </div>
+                {{!-- <div class="col s10 m3 redBtn pointer active" style="margin: 32px; margin-top: 10px; margin-bottom: 10px;"> --}}
+                <div class="col s12 m4 ">
+                    <div class="col s12 redBtn pointer active">
+                        <h6 class="incSize"> <img src="assets/all2.png" alt="" style="width: 21px; display:inline; vertical-align: middle; margin-bottom: 2px;" > <span style="vertical-align: middle; padding-top: 2px;">All Cases</span> </h6>
+                    </div>
+                </div>
+                {{!-- <div class="col s10 m3 redBtn pointer" style="margin: 32px; margin-top: 10px; margin-bottom: 10px;"> --}}
+                <div class="col s12 m4 ">
+                    <div class="col s12 redBtn pointer">
+                        <h6 class="incSize"> <img src="assets/pin.png" alt="" style="width: 21px; display:inline; vertical-align: middle; margin-bottom: 2px;" > <span style="vertical-align: middle; padding-top: 2px;">Demographic Data</span> </h6>
+                    </div>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col s12 m12">
+                    <div class="card">
+                        <div class="card-content innerCard">
+                            <div class="row">
+                                <div class="col s12 m6">
+                                    {{!-- <h1 class="step"><b>STEP 1</b></h1> --}}
+                                    <h4 class="step between"><b>Current Patients</b></h4>
+                                </div>
+
+                                <div class="col m4 offset-m2 hide-on-small-only" style="text-align: right;">
+                                    {{!-- <img src="/img/fullicon.webp" class="responsive-img ninety" alt=""> --}}
+                                </div>
+                            </div>
+
+                            
+
+                            <div class="row">
+
+                                
+                                <div class="col s12 m3">
+                                    <div class="card hoverable">
+                                        <div class="card-content cardPad">
+                                            
+                                            <p>TEAM 17</p>
+                                            <h5 class="center-align fixFont">NAME</h5>
+                                            <p class="hide done17">{{done17}}</p>
+                                            <form action="{{judge}}/review/17" class="sendForm" method="POST">
+                                                <div class="right-align">
+                                                    <button id="btn17" class="btn waves-effect waves-light padLess" type="submit" name="action">Submit</button>
+                                                </div>
+                                            </form>
+
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="col s12 m3">
+                                    <div class="card hoverable">
+                                        <div class="card-content cardPad">
+                                            
+                                            <p>TEAM 18</p>
+                                            <h5 class="center-align fixFont">NAME</h5>
+                                            <p class="hide done18">{{done18}}</p>
+                                            <form action="{{judge}}/review/18" class="sendForm" method="POST">
+                                                <div class="right-align">
+                                                    <button id="btn18" class="btn waves-effect waves-light padLess" type="submit" name="action">Submit</button>
+                                                </div>
+                                            </form>
+
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="col s12 m3">
+                                    <div class="card hoverable">
+                                        <div class="card-content cardPad">
+                                            
+                                            <p>TEAM 19</p>
+                                            <h5 class="center-align fixFont">NAME</h5>
+                                            <p class="hide done19">{{done19}}</p>
+                                            <form action="{{judge}}/review/19" class="sendForm" method="POST">
+                                                <div class="right-align">
+                                                    <button id="btn19" class="btn waves-effect waves-light padLess" type="submit" name="action">Submit</button>
+                                                </div>
+                                            </form>
+
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="col s12 m3">
+                                    <div class="card hoverable">
+                                        <div class="card-content cardPad">
+                                            
+                                            <p>TEAM 20</p>
+                                            <h5 class="center-align fixFont">NAME</h5>
+                                            <p class="hide done20">{{done20}}</p>
+                                            <form action="{{judge}}/review/20" class="sendForm" method="POST">
+                                                <div class="right-align">
+                                                    <button id="btn20" class="btn waves-effect waves-light padLess" type="submit" name="action">Submit</button>
+                                                </div>
+                                            </form>
+
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+
+            
+        </div>
+    </div>
+
+
+    <div class="footer">
+        <div class="container">
+            
+        </div>
+    </div>
+
+    <!--Import jQuery before materialize.js-->
+    <script type="text/javascript" src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+    <script type="text/javascript" src="/js/materialize.min.js"></script>
+    <script type="text/javascript" src="/js/activeCards.js"></script>
+    
+    <script>
+        var ran = "{{random}}";
+
+        console.log('Hello World!');
+        console.log(ran);
+    </script>
+</body>
+</html>
