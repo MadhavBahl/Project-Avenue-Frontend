@@ -51,8 +51,13 @@ app.post('/login', (req,res) => {
         .headers({'Accept': 'application/json', 'Content-Type': 'application/json'})
         .send(resp)
         .end(function (response) {
-            res.send(response);
+            console.log(response.body.doctor.patients);
+            res.render('docPat.hbs',{ patData: response.body.doctor.patients });
         });
+});
+
+app.get('/newPat', (req, res) => {
+    
 });
 
 app.listen (port, () => {
