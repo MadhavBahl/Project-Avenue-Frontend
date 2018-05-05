@@ -40,6 +40,7 @@ html, body {
 
 .cardPad {
     padding: 10px !important;
+    background-color: #f1f1f1;
 }
 
 .padLess {
