@@ -57,7 +57,19 @@ app.post('/login', (req,res) => {
 });
 
 app.get('/newPat', (req, res) => {
-    
+
+});
+
+app.get('/demographic', (req, res) => {
+    // unirest.get('https://avenue-angelhack.herokuapp.com/doctor/fetchAllCoordinates')
+    //     .headers({'Accept': 'application/json', 'Content-Type': 'application/json'})
+    //     .end(function (response) {
+    //         // console.log(response.body.doctor.patients);
+    //         // res.render('docPat.hbs',{ patData: response.body.doctor.patients });
+    //         // res.send(response.body);
+    //         res.render('demographic.hbs', { elements: response.coordinates });
+    //     });
+    res.render('demographic.hbs');
 });
 
 app.listen (port, () => {

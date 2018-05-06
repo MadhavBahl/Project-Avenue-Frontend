@@ -1,0 +1,239 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta name="description" content="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum" />
+    <title>Avenue | Welcome</title>
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.12/css/all.css" integrity="sha384-G0fIWCsCzJIMAVNQPfjH08cyYaUtMwjJwqiRKxxE/rx96Uroj1BtIQ6MLJuheaO9" crossorigin="anonymous">
+    <link rel="shortcut icon" href="/img/adg-logo.png">
+    <!--Import materialize.css-->
+    <link type="text/css" rel="stylesheet" href="/css/materialize.min.css"  media="screen,projection"/>
+    <link rel="stylesheet" href="/css/index.css">
+    <link rel="stylesheet" href="/css/map.css">
+</head>
+<body>
+
+    <div class="header">
+        <div class="container">
+            
+
+            
+        </div>
+
+        
+    </div>
+
+    <div class="container">
+        
+    </div>
+
+    <div class="mainCard" id="mainCard1">
+        <div class="container mainCardContainer">
+            <div class="row" style="padding-top: 28px;">
+                <div class="col s12 m3">
+                    <img src="/assets/Icon.png" class="responsive-img" alt="">
+                </div>
+
+                <div class="col s12 m1 offset-m8 hide-on-small-only">
+                    <img src="/assets/home.png" class="responsive-img" alt="">
+                </div>
+            </div>
+            <br>
+
+            <div class="row">
+                {{!-- <div class="col s10 m3 redBtn pointer" style="margin: 32px; margin-top: 10px; margin-bottom: 10px;"> --}}
+                <div class="col s12 m4 ">
+                    <div class="col s12 redBtn pointer">
+                        <h6 class="incSize"> <img src="assets/plus.png" alt="" style="width: 21px; display:inline; vertical-align: middle; margin-bottom: 2px;" > <span style="vertical-align: middle; padding-top: 2px;">New Case</span> </h6>
+                    </div>
+                    
+                </div>
+                {{!-- <div class="col s10 m3 redBtn pointer active" style="margin: 32px; margin-top: 10px; margin-bottom: 10px;"> --}}
+                <div class="col s12 m4 ">
+                    <div class="col s12 redBtn pointer active">
+                        <h6 class="incSize"> <img src="assets/all2.png" alt="" style="width: 21px; display:inline; vertical-align: middle; margin-bottom: 2px;" > <span style="vertical-align: middle; padding-top: 2px;">All Cases</span> </h6>
+                    </div>
+                </div>
+                {{!-- <div class="col s10 m3 redBtn pointer" style="margin: 32px; margin-top: 10px; margin-bottom: 10px;"> --}}
+                <div class="col s12 m4 ">
+                    <div class="col s12 redBtn pointer">
+                        <h6 class="incSize"> <img src="assets/pin.png" alt="" style="width: 21px; display:inline; vertical-align: middle; margin-bottom: 2px;" > <span style="vertical-align: middle; padding-top: 2px;">Demographic Data</span> </h6>
+                    </div>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col s12 m12">
+                    <div class="card">
+                        <div class="card-content innerCard">
+                            <div class="row">
+                                <div class="col s12 m6">
+                                    {{!-- <h1 class="step"><b>STEP 1</b></h1> --}}
+                                    <h4 class="step "><b>Current Patients</b></h4>
+                                </div>
+
+                                <div class="col m4 offset-m2 hide-on-small-only" style="text-align: right;">
+                                    {{!-- <img src="/img/fullicon.webp" class="responsive-img ninety" alt=""> --}}
+                                </div>
+                            </div>
+
+                            
+
+                            <div class="row">
+
+                               <div class="col s12">
+                                   <div id="map_wrapper">
+                                        <div id="map_canvas" class="mapping"></div>
+                                    </div>
+                               </div>
+
+                                
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+
+            
+        </div>
+    </div>
+
+
+    <div class="footer">
+        <div class="container">
+            
+        </div>
+    </div>
+
+    <!--Import jQuery before materialize.js-->
+    <script type="text/javascript" src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+    <script type="text/javascript" src="/js/materialize.min.js"></script>
+    
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDqnG5CmkFAGx_FkmvDTP2Tip3szE9ymOI&callback=initialize"
+    async defer></script>
+    {{!-- <script src="js/map.js"></script> --}}
+    <script>
+        jQuery(function($) {
+            // Asynchronously Load the map API 
+            var script = document.createElement('script');
+            // script.src = "https://maps.googleapis.com/maps/api/js?sensor=false&callback=initialize";
+            // script.src = "https://maps.googleapis.com/maps/api/js?key=AIzaSyDqnG5CmkFAGx_FkmvDTP2Tip3szE9ymOI&callback=initMap";
+            // document.body.appendChild(script);
+        });
+
+        function initialize() {
+            var map;
+            var bounds = new google.maps.LatLngBounds();
+            var mapOptions = {
+                mapTypeId: 'hybrid'
+            // mapTypeId: 'satellite'
+                // mapTypeId: 'roadmap'
+            // mapTypeId: 'terrain'
+            };
+                            
+            // Display a map on the page
+            map = new google.maps.Map(document.getElementById("map_canvas"), mapOptions);
+            map.setTilt(45);
+
+            var uri = "https://avenue-angelhack.herokuapp.com/doctor/fetchAllCoordinates";
+
+            $.ajax({
+                url: uri,
+                beforeSend: function (request) {
+                    request.setRequestHeader("Authorization", "Negotiate");
+                },
+                async: true,
+                success: function (data) {
+                    console.log(JSON.stringify(data));
+
+                    // Initializing MAP
+
+                    // Multiple Markers
+                    var markers = [
+                        ['Abu Dhabi', 23.4503101,53.6555362],
+                        ['Dubai, UAE ', 25.075677,54.9489376],
+                    ['Ajman, UAE ', 25.3993862,55.4603624],
+                    ['Fujairah, UAE ', 25.2875526,55.8887813],
+                    ['Sharjah', 25.3166,55.476935],
+                    ['Ras al-Khaimah', 25.7263233,55.827848],
+                    ['Umm al-Qaiwain', 25.5096566,55.5952655]
+                    ];
+                                        
+                    // Info Window Content
+                    var infoWindowContent = [
+                        ['<div class="info_content">' +
+                        '<h3>Abu Dhabi</h3>' +
+                        '<p>Lorem Ipsum is simply dummy text of the printing and typesetting industry.</p>' +
+                        '<p>LYMO Users: 24</p>' + '<p>LYMO Drivers: 33</p>' +'</div>'],
+                    ['<div class="info_content">' +
+                        '<h3>Dubai, UAE </h3>' +
+                        '<p>Lorem Ipsum is simply dummy text of the printing and typesetting industry.</p>' +
+                        '<p>LYMO Users: 24</p>' + '<p>LYMO Drivers: 33</p>' +'</div>'],
+                    ['<div class="info_content">' +
+                        '<h3>Ajman, UAE</h3>' +
+                        '<p>Lorem Ipsum is simply dummy text of the printing and typesetting industry.</p>' +
+                        '<p>LYMO Users: 24</p>' + '<p>LYMO Drivers: 33</p>' +'</div>'],
+                    ['<div class="info_content">' +
+                        '<h3>Fujairah, UAE</h3>' +
+                        '<p>Lorem Ipsum is simply dummy text of the printing and typesetting industry.</p>' +
+                        '<p>LYMO Users: 24</p>' + '<p>LYMO Drivers: 33</p>' +'</div>'],
+                    ['<div class="info_content">' +
+                        '<h3>Sharjah</h3>' +
+                        '<p>Lorem Ipsum is simply dummy text of the printing and typesetting industry.</p>' +
+                        '<p>LYMO Users: 24</p>' + '<p>LYMO Drivers: 33</p>' +'</div>'],
+                    ['<div class="info_content">' +
+                        '<h3>Ras al-Khaimah</h3>' +
+                        '<p>Lorem Ipsum is simply dummy text of the printing and typesetting industry.</p>' +
+                        '<p>LYMO Users: 24</p>' + '<p>LYMO Drivers: 33</p>' +'</div>'],
+                    ['<div class="info_content">' +
+                        '<h3>Umm al-Qaiwain</h3>' +
+                        '<p>Lorem Ipsum is simply dummy text of the printing and typesetting industry.</p>' +
+                        '<p>LYMO Users: 24</p>' + '<p>LYMO Drivers: 33</p>' +'</div>']
+                    ];
+                        
+                    // Display multiple markers on a map
+                    var infoWindow = new google.maps.InfoWindow(), marker, i;
+                    
+                    // Loop through our array of markers & place each one on the map  
+                    for( i = 0; i < markers.length; i++ ) {
+                        var position = new google.maps.LatLng(markers[i][1], markers[i][2]);
+                        bounds.extend(position);
+                        marker = new google.maps.Marker({
+                            position: position,
+                            map: map,
+                            title: markers[i][0]
+                        });
+                        
+                        // Allow each marker to have an info window    
+                        google.maps.event.addListener(marker, 'click', (function(marker, i) {
+                            return function() {
+                                infoWindow.setContent(infoWindowContent[i][0]);
+                                infoWindow.open(map, marker);
+                            }
+                        })(marker, i));
+
+                        // Automatically center the map fitting all markers on the screen
+                        map.fitBounds(bounds);
+                    }
+
+                    // Override our map zoom level once our fitBounds function runs (Make sure it only runs once)
+                    var boundsListener = google.maps.event.addListener((map), 'bounds_changed', function(event) {
+                        this.setZoom(7);
+                        google.maps.event.removeListener(boundsListener);
+                    });
+                },
+                error: function (xhr, textStatus, errorMessage) {
+                    alert('Something Went Wrong!', errorMessage);
+                }                
+            });
+
+           
+
+            
+            
+        }
+    </script>
+</body>
+</html>
