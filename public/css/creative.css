@@ -454,3 +454,9 @@ html, body {
 p {
   font-size: 18px;
 }
+
+.mainPhoto {
+  min-height: 70vh;
+  
+  /* background-image: url('/img/bkg2.jpg'); */
+}
