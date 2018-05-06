@@ -13,20 +13,6 @@
 </head>
 <body>
 
-    <div class="header">
-        <div class="container">
-            
-
-            
-        </div>
-
-        
-    </div>
-
-    <div class="container">
-        
-    </div>
-
     <div class="mainCard" id="mainCard1">
         <div class="container mainCardContainer">
             <div class="row" style="padding-top: 28px;">
@@ -43,21 +29,21 @@
             <div class="row">
                 {{!-- <div class="col s10 m3 redBtn pointer" style="margin: 32px; margin-top: 10px; margin-bottom: 10px;"> --}}
                 <div class="col s12 m4 ">
-                    <div class="col s12 redBtn pointer">
-                        <h6 class="incSize"> <img src="assets/plus.png" alt="" style="width: 21px; display:inline; vertical-align: middle; margin-bottom: 2px;" > <span style="vertical-align: middle; padding-top: 2px;">New Case</span> </h6>
+                    <div class="col s12 redBtn pointer plus">
+                        <h6 class="incSize"> <img src="/assets/plus.png" alt="" style="width: 21px; display:inline; vertical-align: middle; margin-bottom: 2px;" > <span style="vertical-align: middle; padding-top: 2px;">New Case</span> </h6>
                     </div>
                     
                 </div>
                 {{!-- <div class="col s10 m3 redBtn pointer active" style="margin: 32px; margin-top: 10px; margin-bottom: 10px;"> --}}
                 <div class="col s12 m4 ">
-                    <div class="col s12 redBtn pointer active">
-                        <h6 class="incSize"> <img src="assets/all2.png" alt="" style="width: 21px; display:inline; vertical-align: middle; margin-bottom: 2px;" > <span style="vertical-align: middle; padding-top: 2px;">All Cases</span> </h6>
+                    <div class="col s12 redBtn pointer active all">
+                        <h6 class="incSize"> <img src="/assets/all2.png" alt="" style="width: 21px; display:inline; vertical-align: middle; margin-bottom: 2px;" > <span style="vertical-align: middle; padding-top: 2px;">All Cases</span> </h6>
                     </div>
                 </div>
                 {{!-- <div class="col s10 m3 redBtn pointer" style="margin: 32px; margin-top: 10px; margin-bottom: 10px;"> --}}
                 <div class="col s12 m4 ">
-                    <div class="col s12 redBtn pointer">
-                        <h6 class="incSize"> <img src="assets/pin.png" alt="" style="width: 21px; display:inline; vertical-align: middle; margin-bottom: 2px;" > <span style="vertical-align: middle; padding-top: 2px;">Demographic Data</span> </h6>
+                    <div class="col s12 redBtn pointer pinMain">
+                        <h6 class="incSize"> <img src="/assets/pin.png" alt="" style="width: 21px; display:inline; vertical-align: middle; margin-bottom: 2px;" > <span style="vertical-align: middle; padding-top: 2px;">Demographic Data</span> </h6>
                     </div>
                 </div>
             </div>
@@ -70,6 +56,7 @@
                                 <div class="col s12 m6">
                                     {{!-- <h1 class="step"><b>STEP 1</b></h1> --}}
                                     <h4 class="step "><b>Current Patients</b></h4>
+                                    <h5 class="step ">{{success}}</h5>
                                 </div>
 
                                 <div class="col m4 offset-m2 hide-on-small-only" style="text-align: right;">
@@ -94,7 +81,7 @@
                                                     <h5 style="color: #686868; margin-top: 2px; margin-bottom: -2px;">{{this.current_disease.name}}</h5>
                                                 </div>
                                                 <div class="col s5">
-                                                    <img src="https://avatars3.githubusercontent.com/u/11597765?s=400&v=4" class="responsive-img circle">
+                                                    <img src="{{this.img_url}}" class="responsive-img circle">
                                                 </div>
                                             </div>
 
@@ -123,7 +110,7 @@
             
         </div>
     </div>
-
+    <div style="display: none;" id="mainId">{{id}}</div>
 
     <div class="footer">
         <div class="container">
@@ -134,13 +121,6 @@
     <!--Import jQuery before materialize.js-->
     <script type="text/javascript" src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
     <script type="text/javascript" src="/js/materialize.min.js"></script>
-    <script type="text/javascript" src="/js/activeCards.js"></script>
-    
-    <script>
-        var ran = "{{random}}";
-
-        console.log('Hello World!');
-        console.log(ran);
-    </script>
+    <script src="/js/changeLink.js"></script>
 </body>
 </html>

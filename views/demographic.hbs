@@ -14,20 +14,7 @@
 </head>
 <body>
 
-    <div class="header">
-        <div class="container">
-            
-
-            
-        </div>
-
-        
-    </div>
-
-    <div class="container">
-        
-    </div>
-
+    <div style="display: none;" id="mainId">{{id}}</div>
     <div class="mainCard" id="mainCard1">
         <div class="container mainCardContainer">
             <div class="row" style="padding-top: 28px;">
@@ -44,21 +31,21 @@
             <div class="row">
                 {{!-- <div class="col s10 m3 redBtn pointer" style="margin: 32px; margin-top: 10px; margin-bottom: 10px;"> --}}
                 <div class="col s12 m4 ">
-                    <div class="col s12 redBtn pointer">
-                        <h6 class="incSize"> <img src="assets/plus.png" alt="" style="width: 21px; display:inline; vertical-align: middle; margin-bottom: 2px;" > <span style="vertical-align: middle; padding-top: 2px;">New Case</span> </h6>
+                    <div class="col s12 redBtn pointer plus">
+                        <h6 class="incSize "> <img src="/assets/plus.png" alt="" style="width: 21px; display:inline; vertical-align: middle; margin-bottom: 2px;" > <span style="vertical-align: middle; padding-top: 2px;">New Case</span> </h6>
                     </div>
                     
                 </div>
                 {{!-- <div class="col s10 m3 redBtn pointer active" style="margin: 32px; margin-top: 10px; margin-bottom: 10px;"> --}}
                 <div class="col s12 m4 ">
-                    <div class="col s12 redBtn pointer active">
-                        <h6 class="incSize"> <img src="assets/all2.png" alt="" style="width: 21px; display:inline; vertical-align: middle; margin-bottom: 2px;" > <span style="vertical-align: middle; padding-top: 2px;">All Cases</span> </h6>
+                    <div class="col s12 redBtn pointer all">
+                        <h6 class="incSize "> <img src="/assets/all.png" alt="" style="width: 21px; display:inline; vertical-align: middle; margin-bottom: 2px;" > <span style="vertical-align: middle; padding-top: 2px;">All Cases</span> </h6>
                     </div>
                 </div>
                 {{!-- <div class="col s10 m3 redBtn pointer" style="margin: 32px; margin-top: 10px; margin-bottom: 10px;"> --}}
                 <div class="col s12 m4 ">
-                    <div class="col s12 redBtn pointer">
-                        <h6 class="incSize"> <img src="assets/pin.png" alt="" style="width: 21px; display:inline; vertical-align: middle; margin-bottom: 2px;" > <span style="vertical-align: middle; padding-top: 2px;">Demographic Data</span> </h6>
+                    <div class="col s12 redBtn pointer active pin">
+                        <h6 class="incSize "> <img src="/assets/pin2.png" alt="" style="width: 21px; display:inline; vertical-align: middle; margin-bottom: 2px;" > <span style="vertical-align: middle; padding-top: 2px;">Demographic Data</span> </h6>
                     </div>
                 </div>
             </div>
@@ -68,14 +55,12 @@
                     <div class="card">
                         <div class="card-content innerCard">
                             <div class="row">
-                                <div class="col s12 m6">
+                                <div class="col s12 m12">
                                     {{!-- <h1 class="step"><b>STEP 1</b></h1> --}}
-                                    <h4 class="step "><b>Current Patients</b></h4>
+                                    <h4 class="step "><b>Demographic Data Of All Patients</b></h4>
                                 </div>
 
-                                <div class="col m4 offset-m2 hide-on-small-only" style="text-align: right;">
-                                    {{!-- <img src="/img/fullicon.webp" class="responsive-img ninety" alt=""> --}}
-                                </div>
+                                
                             </div>
 
                             
@@ -110,10 +95,10 @@
     <!--Import jQuery before materialize.js-->
     <script type="text/javascript" src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
     <script type="text/javascript" src="/js/materialize.min.js"></script>
+    <script src="/js/changeLink.js"></script>
     
     <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDqnG5CmkFAGx_FkmvDTP2Tip3szE9ymOI&callback=initialize"
     async defer></script>
-    {{!-- <script src="js/map.js"></script> --}}
     <script>
         jQuery(function($) {
             // Asynchronously Load the map API 
@@ -127,9 +112,9 @@
             var map;
             var bounds = new google.maps.LatLngBounds();
             var mapOptions = {
-                mapTypeId: 'hybrid'
+                // mapTypeId: 'hybrid'
             // mapTypeId: 'satellite'
-                // mapTypeId: 'roadmap'
+                mapTypeId: 'roadmap'
             // mapTypeId: 'terrain'
             };
                             
@@ -150,48 +135,18 @@
 
                     // Initializing MAP
 
-                    // Multiple Markers
-                    var markers = [
-                        ['Abu Dhabi', 23.4503101,53.6555362],
-                        ['Dubai, UAE ', 25.075677,54.9489376],
-                    ['Ajman, UAE ', 25.3993862,55.4603624],
-                    ['Fujairah, UAE ', 25.2875526,55.8887813],
-                    ['Sharjah', 25.3166,55.476935],
-                    ['Ras al-Khaimah', 25.7263233,55.827848],
-                    ['Umm al-Qaiwain', 25.5096566,55.5952655]
-                    ];
-                                        
-                    // Info Window Content
-                    var infoWindowContent = [
-                        ['<div class="info_content">' +
-                        '<h3>Abu Dhabi</h3>' +
-                        '<p>Lorem Ipsum is simply dummy text of the printing and typesetting industry.</p>' +
-                        '<p>LYMO Users: 24</p>' + '<p>LYMO Drivers: 33</p>' +'</div>'],
-                    ['<div class="info_content">' +
-                        '<h3>Dubai, UAE </h3>' +
-                        '<p>Lorem Ipsum is simply dummy text of the printing and typesetting industry.</p>' +
-                        '<p>LYMO Users: 24</p>' + '<p>LYMO Drivers: 33</p>' +'</div>'],
-                    ['<div class="info_content">' +
-                        '<h3>Ajman, UAE</h3>' +
-                        '<p>Lorem Ipsum is simply dummy text of the printing and typesetting industry.</p>' +
-                        '<p>LYMO Users: 24</p>' + '<p>LYMO Drivers: 33</p>' +'</div>'],
-                    ['<div class="info_content">' +
-                        '<h3>Fujairah, UAE</h3>' +
-                        '<p>Lorem Ipsum is simply dummy text of the printing and typesetting industry.</p>' +
-                        '<p>LYMO Users: 24</p>' + '<p>LYMO Drivers: 33</p>' +'</div>'],
-                    ['<div class="info_content">' +
-                        '<h3>Sharjah</h3>' +
-                        '<p>Lorem Ipsum is simply dummy text of the printing and typesetting industry.</p>' +
-                        '<p>LYMO Users: 24</p>' + '<p>LYMO Drivers: 33</p>' +'</div>'],
-                    ['<div class="info_content">' +
-                        '<h3>Ras al-Khaimah</h3>' +
-                        '<p>Lorem Ipsum is simply dummy text of the printing and typesetting industry.</p>' +
-                        '<p>LYMO Users: 24</p>' + '<p>LYMO Drivers: 33</p>' +'</div>'],
-                    ['<div class="info_content">' +
-                        '<h3>Umm al-Qaiwain</h3>' +
-                        '<p>Lorem Ipsum is simply dummy text of the printing and typesetting industry.</p>' +
-                        '<p>LYMO Users: 24</p>' + '<p>LYMO Drivers: 33</p>' +'</div>']
-                    ];
+                    var markers = [];
+                    var infoWindowContent = [];
+
+                    for(var i=0;i<data.coordinates.length;i++) {
+                        var thisObj = data.coordinates[i];
+                        var tempMark = [thisObj.current_disease.name, thisObj.lat, thisObj.long];
+                        var tempInfo = [`<div class="info_content"><h3>${thisObj.current_disease.name}</h3> <p>${thisObj.current_disease.description}</p></div>`];
+                        markers.push(tempMark);
+                        infoWindowContent.push(tempInfo);
+                    }
+
+                    console.log('MARKERS: ', markers);
                         
                     // Display multiple markers on a map
                     var infoWindow = new google.maps.InfoWindow(), marker, i;

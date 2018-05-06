@@ -148,7 +148,7 @@ img::-moz-selection {
   }
   #mainNav.navbar-shrink {
     border-bottom: 1px solid rgba(33, 37, 41, 0.1);
-    background-color: #2e1149;
+    background-color: #fff;
   }
   #mainNav.navbar-shrink .navbar-brand {
     color: #ee4b28;
@@ -169,7 +169,7 @@ img::-moz-selection {
 header.masthead {
   padding-top: 10rem;
   padding-bottom: calc(10rem - 56px);
-  background-image: url("../img/background.png");
+  background-image: url("../img/bkg.png");
   background-position: center center;
   -webkit-background-size: cover;
   -moz-background-size: cover;

@@ -13,19 +13,7 @@
 </head>
 <body>
 
-    <div class="header">
-        <div class="container">
-            
-
-            
-        </div>
-
-        
-    </div>
-
-    <div class="container">
-        
-    </div>
+    <div style="display: none;" id="mainId">{{id}}</div>
 
     <div class="mainCard" id="mainCard1">
         <div class="container mainCardContainer">
@@ -43,21 +31,21 @@
             <div class="row">
                 {{!-- <div class="col s10 m3 redBtn pointer" style="margin: 32px; margin-top: 10px; margin-bottom: 10px;"> --}}
                 <div class="col s12 m4 ">
-                    <div class="col s12 redBtn pointer">
-                        <h6 class="incSize"> <img src="assets/plus.png" alt="" style="width: 21px; display:inline; vertical-align: middle; margin-bottom: 2px;" > <span style="vertical-align: middle; padding-top: 2px;">New Case</span> </h6>
+                    <div class="col s12 redBtn pointer active plus">
+                        <h6 class="incSize"> <img src="/assets/plus2.png" alt="" style="width: 21px; display:inline; vertical-align: middle; margin-bottom: 2px;" > <span style="vertical-align: middle; padding-top: 2px;">New Case</span> </h6>
                     </div>
                     
                 </div>
                 {{!-- <div class="col s10 m3 redBtn pointer active" style="margin: 32px; margin-top: 10px; margin-bottom: 10px;"> --}}
                 <div class="col s12 m4 ">
-                    <div class="col s12 redBtn pointer active">
-                        <h6 class="incSize"> <img src="assets/all2.png" alt="" style="width: 21px; display:inline; vertical-align: middle; margin-bottom: 2px;" > <span style="vertical-align: middle; padding-top: 2px;">All Cases</span> </h6>
+                    <div class="col s12 redBtn pointer all">
+                        <h6 class="incSize"> <img src="/assets/all2.png" alt="" style="width: 21px; display:inline; vertical-align: middle; margin-bottom: 2px;" > <span style="vertical-align: middle; padding-top: 2px;">All Cases</span> </h6>
                     </div>
                 </div>
                 {{!-- <div class="col s10 m3 redBtn pointer" style="margin: 32px; margin-top: 10px; margin-bottom: 10px;"> --}}
                 <div class="col s12 m4 ">
-                    <div class="col s12 redBtn pointer">
-                        <h6 class="incSize"> <img src="assets/pin.png" alt="" style="width: 21px; display:inline; vertical-align: middle; margin-bottom: 2px;" > <span style="vertical-align: middle; padding-top: 2px;">Demographic Data</span> </h6>
+                    <div class="col s12 redBtn pointer pinMain">
+                        <h6 class="incSize"> <img src="/assets/pin.png" alt="" style="width: 21px; display:inline; vertical-align: middle; margin-bottom: 2px;" > <span style="vertical-align: middle; padding-top: 2px;">Demographic Data</span> </h6>
                     </div>
                 </div>
             </div>
@@ -67,20 +55,56 @@
                     <div class="card">
                         <div class="card-content innerCard">
                             <div class="row">
-                                <div class="col s12 m6">
+                                <div class="col s12 m8 center">
                                     {{!-- <h1 class="step"><b>STEP 1</b></h1> --}}
-                                    <h4 class="step "><b>Current Patients</b></h4>
+                                    <h4 class="step "><b>Patient's Information</b></h4>
                                 </div>
 
-                                <div class="col m4 offset-m2 hide-on-small-only" style="text-align: right;">
-                                    {{!-- <img src="/img/fullicon.webp" class="responsive-img ninety" alt=""> --}}
-                                </div>
                             </div>
 
                             
 
                             <div class="row">
+                                <form action="/createNewPat/{{id}}" method="POST" class="col s12 m8 offset-m2">
+                                    <div class="row">
+                                        <div class="input-field whiteBkg col s6">
+                                            <input placeholder="First Name" name="fname" id="" type="text" class="validate center">                                        
+                                        </div>
+                                        <div class="input-field col s6">
+                                            <input placeholder="Last Name" id="last_name" name="lname" type="text" class=" center validate">                                        
+                                        </div>
+                                    </div>
 
+                                    <div class="input-field center">
+                                        <input placeholder="Address"  name="address" type="text" class="validate center">
+                                    </div>
+
+                                    <div class="input-field center">
+                                        <input placeholder="Email"  name="email" type="email" class="validate center">
+                                        {{!-- <label for="first_name">First Name</label> --}}
+                                    </div>
+
+                                    <div class="input-field center">
+                                        <input placeholder="Phone Number"  name="contact" type="number" class="validate center">
+                                    </div>
+
+                                    <div class="input-field center">
+                                        <input placeholder="Disease Name"  name="disease_name" type="text" class="validate center">
+                                    </div>
+
+                                    <div class="input-field center">
+                                        <input placeholder="Disease Description"  name="disease_desc" type="text" class="validate center">
+                                    </div>
+
+                                    <div class="input-field center">
+                                        <input placeholder="Image URL"  name="img_url" type="text" class="validate center">
+                                    </div>
+                                    
+
+                                    <div class="input-field center col s12" style="padding: 0;">
+                                        <button style="padding: 0; background-color: #e15556;" class="btn waves-effect waves-light  col s12 activeBkg" type="submit" name="action"> <span class="interText">SIGNUP</span></button>
+                                    </div>
+                                </form>
                                
 
                                 
@@ -105,13 +129,7 @@
     <!--Import jQuery before materialize.js-->
     <script type="text/javascript" src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
     <script type="text/javascript" src="/js/materialize.min.js"></script>
-    <script type="text/javascript" src="/js/activeCards.js"></script>
+    <script src="/js/changeLink.js"></script>
     
-    <script>
-        var ran = "{{random}}";
-
-        console.log('Hello World!');
-        console.log(ran);
-    </script>
 </body>
 </html>
